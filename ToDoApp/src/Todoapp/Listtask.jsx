@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Listtask = () => {
+
+const Listtask = ({task, removeTask, index,isEdit,update}) => {
+    const [value,setValue] = useState(task.title)
   return (
     <>
-        <div className='list-tasks'>
-            Task Name
-            <button className='delete-btn btn btn-secondary'>DELETE</button>
+        <div className='list-tasks col-12 d-flex'>
+            <div className='col-10'>
+                {!task.isEdit ? task.title :  <input type="text" onChange={(e)=>setValue(e.target.value)} value={value} />}
+           
+            </div>
+            <div className='col-2'>
+            {!task.isEdit ? <button onClick={()=>isEdit(task)}>✏️</button> : <button onClick={()=>update( task.id,value)} >✅</button>}
+            <button onClick={()=>{removeTask(index)}} className='btn btn-secondary' style={{ float: 'right' }}>DELETE</button>
+            </div>
         </div>
     </>
   )
