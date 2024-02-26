@@ -31,3 +31,16 @@
     margin: 1em;
     width: 80%; 
 }
+
+.list-tasks{
+    font-size: 1.25em;
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+    background-color: black;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 0.5em;
+
+}
